@@ -1,17 +1,22 @@
 
 body{
+    font-family: 'Poppins', sans-serif; 
     box-sizing: border-box;
     margin: 0;
     padding: 10px;
-    border: 1px solid red;
     display: grid;
+    place-items: center;
+}
 
+.mainContainer{
+    max-width: 700px;
+    padding: 10px;
 }
 
 
 header{
     display: flex;
-    border: 1px solid red;
+    margin-top: 20px;
     
 }
 
@@ -20,71 +25,101 @@ header{
     margin: 0;
     padding: 0;
     font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 
-.titleContainer h2,
+.titleContainer h1,
 .titleContainer p {
     margin: 0;
 }
 
-.titleContainer p{
-    
-    font-size: 18px;
+.titleContainer h1{
+    font-size: clamp(28px, 5vw, 50px);
+    font-weight: 900;
+    padding-left: 10px;
 }
 
 
+.description{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px;
+    
+}
+
+#descriptionRole {
+    font-size: clamp(14px, 2.5vw, 18px);
+}
+
+#descriptionSays{
+    font-size: clamp(12px, 2vw, 13px);
+}
+
 .imageContainer{
-    border: 1px solid red;
+    padding: 10px;
+    display: none;
 }
 
 .imageContainer img{
-    border: 1px solid red;
     padding: 10px;
-    height: 100px;
+    height: 150px;
     border-radius: 100%;
 }
 
 .about{
   
     display: flex;
-    flex-direction: columns;
+    flex-direction: column;
 }
 
 .about h3{
-    border: 1px solid black;
     
 }
 
 .about article{
     padding: 5px;
-    border: 1px solid red;
+    color: rgba(26, 26, 26, 0.582);
+    font-size: clamp(13px, 2.5vw, 14px);
 }
 
 .Education{
-    border: 1px solid red;
     
 }
 
 .SchoolContainer{
     display: flex;
+    justify-content: space-between;
     gap: 5px;
     padding: 10px;
-    border: 1px solid blue;
+}
+
+.Education_left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
 .schoolname h3,
 .schoolname p {
     margin: 3px;
 }
+.schoolname{
+    flex-grow: 1;
+}
 
 .schoolname h3{
-    font-size: 13px;
+    font-size: clamp(12px, 2.5vw, 13px);
     font-weight: 700;
 }
 .schoolname p,
 .yearConatiner p{
-    font-size: 12px;
-    color: rgba(58, 57, 57, 0.699);
+    font-size: clamp(11px, 2vw, 12px);
+    color: rgb(100, 100, 100);
 }
 
 
@@ -92,7 +127,6 @@ header{
 .logoContainer{
     display: flex;
     align-items: center;
-    border: 1px solid blue;
 }
 
 .logoContainer img{
@@ -101,11 +135,138 @@ header{
 }
 
 .schoolname{
-    border: 1px solid blue;
+
 }
 
 .yearConatiner{
-    display: flex;
-    border: 1px solid blue;
+ 
+
    
+}
+
+.teck_stack{
+    display: flex;
+    flex-direction: column;
+}
+.techContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.techtitle{
+    font-weight: 600;
+}
+
+.technologies{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.technologies span{
+    background-color: black;
+    padding: 5px 15px;
+    border-radius: 35px;
+    color: white;
+    font-size: clamp(11px, 2vw, 13px);
+}
+
+.projContainer{
+   display: flex;
+   flex-direction: column;
+}
+
+.projectTabs{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    
+}
+
+.project{
+
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 25px 15px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.projectDescription{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.projectSnapshot{
+    padding: 80px;
+     border: 1px solid rgba(0, 0, 0, 0.233);
+}
+
+.projecttitle{
+    font-size: clamp(15px, 2vw, 18px);
+    font-weight: bold;
+    margin-top: 5px ;
+}
+
+.projectDesc{
+    font-size: clamp(10px, 2vw, 13px);
+    
+}
+
+.projectTeckstack{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+}
+
+.projectTeckstack span{
+    background-color: rgba(109, 109, 109, 0.39);
+    padding: 5px 15px;
+    border-radius: 35px;
+    color: white;
+    font-size: clamp(8px, 2vw, 10px);
+}
+
+.moretab{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.moretab span{
+    display: flex;
+    justify-content: center;
+}
+
+
+footer{
+    text-align: center;
+    font-size: clamp(13px, 2vw, 17px);
+}
+
+/* For devices with a minimum width of 768px (Medium) */
+@media screen and (min-width: 768px) {
+  .imageContainer{
+    display: block;
+  }
+
+  .projectTabs{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projectSnapshot{
+    min-height: 100px;
+    
+    }
+
+}
+/* For devices with a minimum width of 992px (Large) */
+@media screen and (min-width: 992px) {
+  
 }
