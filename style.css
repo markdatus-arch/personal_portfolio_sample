@@ -17,15 +17,15 @@ body{
 header{
     display: flex;
     margin-top: 20px;
-    
+    width: 100%;
 }
 
 .titleContainer{
-    flex-grow: 1;
     margin: 0;
     padding: 0;
     font-size: 15px;
     display: flex;
+    width: 60%;
     flex-direction: column;
     justify-content: center;
     
@@ -60,6 +60,7 @@ header{
 }
 
 .imageContainer{
+    width: 40%;
     padding: 10px;
     display: none;
 }
@@ -202,7 +203,7 @@ header{
 
 .projectSnapshot{
     padding: 80px;
-     border: 1px solid rgba(0, 0, 0, 0.233);
+    border: 1px solid rgba(0, 0, 0, 0.233);
 }
 
 .projecttitle{
@@ -243,16 +244,107 @@ header{
     justify-content: center;
 }
 
+.moretab a{
+    text-decoration: none;
+    color: black;
+    font-size: clamp(9px, 2vw, 15px);
+}
+
+.certificateContainer{
+    margin: 0;
+    padding: 0;
+}
+
+
+.certificateContainer span, .certificateContainer h3{
+    margin-bottom: 10px;
+}
+
+.carousel{
+    width: 100%;
+    overflow: hidden; 
+    margin-top: 10px;
+}
+
+
+.track{
+    display: flex;
+    width: max-content;
+    gap: 1em;
+    animation: slide 13s linear infinite; 
+    padding: 10px;
+}
+
+.group{
+    display: flex;
+    gap: 1em;
+}
+
+.card{
+    max-width: 260px;
+    padding: 10px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    font-size: 3rem;
+    border-radius: .2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel::-webkit-scrollbar{
+    display: none;
+}
+
+.imageCard{
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.imageCard img{
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    width: 130px;
+    object-fit: cover;
+}
+
+.nameCArd{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: clamp(9px, 2vw, 12px);
+}
+
+.certificateContainer span{
+    font-size: clamp(9px, 2vw, 15px);
+    color: rgba(26, 26, 26, 0.582);
+}
+
+.track:hover{
+    animation-play-state: paused;
+}
+
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); 
+  }
+}
+
 
 footer{
     text-align: center;
-    font-size: clamp(13px, 2vw, 17px);
+    font-size: clamp(12px, 2vw, 15px);
 }
 
 /* For devices with a minimum width of 768px (Medium) */
 @media screen and (min-width: 768px) {
   .imageContainer{
-    display: block;
+    display: flex;
+    justify-content: center;
   }
 
   .projectTabs{
