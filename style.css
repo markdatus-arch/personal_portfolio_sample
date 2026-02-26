@@ -280,7 +280,7 @@ header{
 }
 
 .card{
-    max-width: 260px;
+    flex: 0 0 clamp(180px, 40vw, 260px);
     padding: 10px;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
     font-size: 3rem;
@@ -303,8 +303,10 @@ header{
 
 .imageCard img{
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    width: 130px;
     object-fit: cover;
+    width: 100%;
+    max-width: 130px;
+    height: auto;
 }
 
 .nameCArd{
@@ -340,6 +342,16 @@ footer{
 }
 
 /* For devices with a minimum width of 768px (Medium) */
+@media (max-width: 600px) {
+  .track {
+    animation-duration: 20s; /* slower on mobile */
+  }
+
+  .card {
+    flex: 0 0 70vw; /* show 1 card at a time */
+  }
+}
+
 @media screen and (min-width: 768px) {
   .imageContainer{
     display: flex;
