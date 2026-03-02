@@ -25,7 +25,7 @@ header{
     padding: 0;
     font-size: 15px;
     display: flex;
-    width: 60%;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     
@@ -70,6 +70,7 @@ header{
     height: 150px;
     border-radius: 50%;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border: 1px solid lawngreen;
 }
 
 .about{
@@ -78,9 +79,6 @@ header{
     flex-direction: column;
 }
 
-.about h3{
-    
-}
 
 .about article{
     padding: 5px;
@@ -88,14 +86,13 @@ header{
     font-size: clamp(13px, 2.5vw, 14px);
 }
 
-.Education{
-    
-}
+
 
 .SchoolContainer{
     display: flex;
     justify-content: space-between;
     gap: 5px;
+    flex-wrap: wrap;
     padding: 10px;
 }
 
@@ -178,17 +175,16 @@ header{
 .projContainer{
    display: flex;
    flex-direction: column;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
-.projectTabs{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    
+.projectTabs {
+    gap: 20px;
+
 }
 
 .project{
-
     display: flex;
     border-radius: 10px;
     flex-direction: column;
@@ -202,9 +198,12 @@ header{
     gap: 10px;
 }
 
-.projectSnapshot{
-    padding: 80px;
+.projectSnapshot {
+    padding: clamp(20px, 8vw, 80px); /* Small on mobile, large on desktop */
     border: 1px solid rgba(0, 0, 0, 0.233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .projecttitle{
@@ -218,11 +217,10 @@ header{
     
 }
 
-.projectTeckstack{
+.projectTeckstack {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* CRITICAL FIX */
     gap: 6px;
-
 }
 
 .projectTeckstack span{
@@ -265,6 +263,7 @@ header{
     width: 100%;
     overflow: hidden; 
     margin-top: 10px;
+    
 }
 
 
@@ -272,7 +271,7 @@ header{
     display: flex;
     width: max-content;
     gap: 1em;
-    animation: slide 13s linear infinite; 
+    animation: slide  20s linear infinite; 
     padding: 10px;
 }
 
@@ -283,11 +282,12 @@ header{
 
 .card{
     flex: 0 0 clamp(180px, 40vw, 260px);
-    padding: 10px;
+    padding: 15px;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
     font-size: 3rem;
     border-radius: .2em;
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -295,28 +295,37 @@ header{
     display: none;
 }
 
-.imageCard{
-    margin: 10px;
+.imageCard {
+    height: 90px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
-.imageCard img{
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    object-fit: cover;
+.imageCard img {
     width: 100%;
-    max-width: 130px;
-    height: auto;
+    height: 100%;
+    object-fit: contain; 
 }
 
-.nameCArd{
+
+.nameCard {
+    max-width: 250px;
     display: flex;
     flex-direction: column;
     padding: 10px;
     font-size: clamp(9px, 2vw, 12px);
+    overflow: hidden;
 }
+
+.certificateName, .Certificate_place {
+     text-overflow: ellipsis;
+     overflow: hidden;
+     white-space: nowrap;
+     width: 100%;
+     display: block;
+}
+
 
 .certificateContainer span{
     font-size: clamp(9px, 2vw, 15px);
@@ -370,8 +379,8 @@ footer{
     
     }
 
-}
-/* For devices with a minimum width of 992px (Large) */
-@media screen and (min-width: 992px) {
-  
+    .titleContainer {
+        width: 60%; /* Only split the width when the image appears */
+    }
+
 }
